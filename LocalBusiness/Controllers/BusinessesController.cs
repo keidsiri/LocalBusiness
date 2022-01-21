@@ -27,6 +27,20 @@ namespace LocalBusiness.Controllers
       return await _db.Businesses.ToListAsync();
     }
 
+    // GET: api/businesses/5
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Business>> GetBusiness(int id)
+    {
+        var business = await _db.Businesses.FindAsync(id);
+
+        if (business == null)
+        {
+            return NotFound();
+        }
+
+        return business;
+    }
+
     // POST api/Businesses
     [HttpPost]
     public async Task<ActionResult<Business>> Post(Business business)
@@ -34,7 +48,7 @@ namespace LocalBusiness.Controllers
       _db.Businesses.Add(business);
       await _db.SaveChangesAsync();
 
-      return CreatedAtAction("Post", new { id = business.BusinessId }, business);
+      return CreatedAtAction(nameof(GetBusiness), new { id = business.BusinessId }, business);
     }
   }
 }
