@@ -22,7 +22,7 @@ namespace LocalBusiness.Controllers
 
     // GET api/Businesses (Search parameter: type,location and rating)
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Business>>> Get(string type, string location, int rating)
+    public async Task<ActionResult<IEnumerable<Business>>> Get(string type, string location, int rating, string sortBy)
     {
       var query = _db.Businesses.AsQueryable();
 
@@ -39,6 +39,22 @@ namespace LocalBusiness.Controllers
       if (rating != 0 )
       {
         query = query.Where(entry => entry.Rating == rating);
+      }
+
+      if (sortBy != null)
+      {
+        if ( sortBy == "rating")
+        {
+        query = query.OrderByDescending(entry => entry.Rating);
+        }
+        if (sortBy == "type")
+        {
+          query = query.OrderBy(entry => entry.Type);
+        }
+        if (sortBy == "location")
+        {
+          query = query.OrderBy(entry => entry.Location);
+        }  
       }
 
       return await query.ToListAsync();
