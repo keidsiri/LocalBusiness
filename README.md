@@ -65,7 +65,23 @@ This is 13th independent project at Epicodus to demonstrate understanding of bui
   - Run the command `$ dotnet build` to build and compile the project
   - Run the command `$ dotnet run` to build and compile the project
 
-* To see, update , add or delete to the API go to [Postman](https://www.postman.com/) with the address "http://localhost:5000/api/Businesses
+* To see, update , add or delete to the API go to [Postman](https://www.postman.com/) with the address "http://localhost:5000/api/Businesses"
+
+#### HTTP Requests
+```
+GET /api/LocalBusinesses
+POST /api/LocalBusinesses
+GET /api/LocalBusinesses/{id}
+PUT /api/LocalBusinesses/{id}
+DELETE /api/LocalBusinesses/{id}
+```
+#### Path Parameters
+| Parameter | Type | Description |  
+| :---: | :---: | --- |
+| Name | string | Returns any business by name|  
+| Type | string | Returns any business by type (shop or restaurant) |  
+| Genre | string | Returns any business by genre (ex: Mexican/ Thai/ Korean restaurants, Music/ Clothing/ Thrift stores)|  
+| Price | int | Returns any business by price range(1-5, with 1 = less expensive, 5 = very expensive) |     
 
 ## Known Bugs
 
