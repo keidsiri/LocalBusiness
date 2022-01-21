@@ -2,14 +2,16 @@
 using LocalBusiness.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LocalBusiness.Migrations
 {
     [DbContext(typeof(LocalBusinessContext))]
-    partial class LocalBusinessContextModelSnapshot : ModelSnapshot
+    [Migration("20220121193607_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +49,7 @@ namespace LocalBusiness.Migrations
                     b.HasData(
                         new
                         {
-                            BusinessId = 2,
+                            BusinessId = 1,
                             Description = "Classic American",
                             Location = "Belltown",
                             Name = "El Gacho",
@@ -57,7 +59,7 @@ namespace LocalBusiness.Migrations
                         },
                         new
                         {
-                            BusinessId = 3,
+                            BusinessId = 2,
                             Description = "Modern Japanese",
                             Location = "Downtown",
                             Name = "Japonessa",
@@ -67,7 +69,7 @@ namespace LocalBusiness.Migrations
                         },
                         new
                         {
-                            BusinessId = 4,
+                            BusinessId = 3,
                             Description = "Mexican",
                             Location = "Fremont",
                             Name = "Red Star Tacos",
@@ -77,7 +79,7 @@ namespace LocalBusiness.Migrations
                         },
                         new
                         {
-                            BusinessId = 5,
+                            BusinessId = 4,
                             Description = "Fresh produces",
                             Location = "White center",
                             Name = "Juan Garden",
@@ -87,7 +89,7 @@ namespace LocalBusiness.Migrations
                         },
                         new
                         {
-                            BusinessId = 6,
+                            BusinessId = 5,
                             Description = "Plant Shop ",
                             Location = "White Center",
                             Name = "The Plant Store",

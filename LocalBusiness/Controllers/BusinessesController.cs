@@ -20,12 +20,30 @@ namespace LocalBusiness.Controllers
       _db = db;
     }
 
-    // GET api/businesses
+    // GET api/Businesses (Search parameter: type,location and rating)
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Business>>> Get()
+    public async Task<ActionResult<IEnumerable<Business>>> Get(string type, string location, int rating)
     {
-      return await _db.Businesses.ToListAsync();
+      var query = _db.Businesses.AsQueryable();
+
+      if (type != null)
+      {
+        query = query.Where(entry => entry.Type == type);
+      }
+
+      if (location != null)
+      {
+        query = query.Where(entry => entry.Location == location);
+      }
+
+      if (rating != 0 )
+      {
+        query = query.Where(entry => entry.Rating == rating);
+      }
+
+      return await query.ToListAsync();
     }
+
 
     // GET: api/businesses/5
     [HttpGet("{id}")]
