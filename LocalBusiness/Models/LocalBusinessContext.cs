@@ -9,6 +9,6 @@ namespace LocalBusiness.Models
         {
         }
 
-        public DbSet<Business> Businesss { get; set; }
+        public DbSet<Business> Businesses { get; set; }
     }
 }
