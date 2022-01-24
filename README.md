@@ -78,10 +78,12 @@ DELETE /api/LocalBusinesses/{id}
 #### Path Parameters
 | Parameter | Type | Description |  
 | :---: | :---: | --- |
-| Name | string | Returns any business by name|  
-| Type | string | Returns any business by type (shop or restaurant) |  
-| Genre | string | Returns any business by genre (ex: Mexican/ Thai/ Korean restaurants, Music/ Clothing/ Thrift stores)|  
-| Price | int | Returns any business by price range(1-5, with 1 = less expensive, 5 = very expensive) |     
+| Type | string | Returns any business by type ( restaurant or local shop)|  
+| Name | string | Returns any business by name  |  
+| Location| string | Returns any business by location |  
+| Description| string| Returns any business by details (ex: Mexican / Thai/ American restaurants.Plant and grocery stores) |   
+| Review | string | Returns any business by review (ex. Mediocre, Good, Great , Excellent)|
+| Rating | int | Returns any business by rating ( from 1 - 10 ) |
 
 ## Known Bugs
 
